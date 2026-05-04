@@ -23,7 +23,7 @@ class MainApp extends ConsumerWidget {
     return MaterialApp.router(
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(tenebrisModusEst: tenebrisModusEst).getTheme(),
+      theme: AppTheme(tenebrisModusEst: tenebrisModusEst, electusColor: Colors.pink.shade200).getTheme(),
     );
   }
 }

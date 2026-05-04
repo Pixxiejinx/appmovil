@@ -15,7 +15,8 @@ class AppTheme {
   ThemeData getTheme() => ThemeData(
     colorSchemeSeed: electusColor,
     brightness: tenebrisModusEst ? Brightness.dark : Brightness.light,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
+    backgroundColor: tenebrisModusEst ? electusColor: electusColor.withAlpha(80),
     centerTitle: false,
     )
   );

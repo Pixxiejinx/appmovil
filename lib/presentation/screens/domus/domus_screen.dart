@@ -71,7 +71,7 @@ class _PropriumListTile extends StatelessWidget {
      trailing: Icon(Icons.arrow_forward_ios_rounded, color: colorum.primary),
      leading: CircleAvatar(
       backgroundColor: Color.fromARGB(
-        100, 
+        Theme.of(context).brightness == Brightness.dark ? 200 : 100, 
         math.Random().nextInt(255), 
         math.Random().nextInt(255), 
         math.Random().nextInt(255), 
