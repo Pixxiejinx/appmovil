@@ -36,6 +36,18 @@ class _BandsScreenState extends State<BandsScreen> {
   Widget _bandTile(Band band) {
     return Dismissible(
       key: Key(band.id),
+      direction: DismissDirection.startToEnd,
+      onDismissed: (direction) {
+        print('Direction: $direction');
+        print('id: ${band.id}');
+      },
+      background: Container(
+        padding: EdgeInsets.only(left: 8.0),
+       child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text('Delete Band', style: TextStyle(color: Colors.white),),
+       ),
+      ),
       child: ListTile(
           leading: CircleAvatar(
             child: Text(band.nomen.substring(0, 2).toUpperCase()),
