@@ -123,7 +123,7 @@ class BandsScreen extends ConsumerWidget {
     );
   }
 
-  addereNuvumBand(BuildContext context, WidgetRef ref){
+  void addereNuvumBand(BuildContext context, WidgetRef ref){
 
     final textumController = TextEditingController();
 
