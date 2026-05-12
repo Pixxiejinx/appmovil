@@ -1,3 +1,10 @@
+# Ignorar dependencias y carpetas de construcción
+.dart_tool/
+.pub-cache/
+.pub/
+build/
+ios/Flutter/.last_build_id 
+
 # Miscellaneous
 *.class
 *.log
@@ -24,6 +31,7 @@ migrate_working_dir/
 #.vscode/
 
 # Flutter/Dart/Pub related
+flutter/
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
