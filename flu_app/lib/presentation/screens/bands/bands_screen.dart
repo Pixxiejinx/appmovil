@@ -14,7 +14,8 @@ class BandsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    final bands = ref.watch(bandsProvider);
+    final bandsState = ref.watch(bandsProvider);
+    final bands = bandsState.bands;
 
     return Scaffold(
       appBar: AppBar(
@@ -187,3 +188,4 @@ class BandsScreen extends ConsumerWidget {
   }
 
 }
+
