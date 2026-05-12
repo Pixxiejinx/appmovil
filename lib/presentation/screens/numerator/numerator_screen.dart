@@ -15,7 +15,7 @@ class NumeratorScreen extends ConsumerWidget {
     final int clickNumerator = ref.watch(numeratorProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text('NumeratorScreen'),
+        title: const Text('NumeratorScreen'),
       ),
       body: Center(
         child: Text('Valor: $clickNumerator', style: Theme.of(context).textTheme.titleLarge),
@@ -24,7 +24,7 @@ class NumeratorScreen extends ConsumerWidget {
       (onPressed: () { 
         ref.read(numeratorProvider.notifier).state++;
        },
-       child: Icon(Icons.add),
+       child: const Icon(Icons.add),
        ),
     );
   }

@@ -18,7 +18,7 @@ class BandsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bandas de music'),
+        title: const Text('Bandas de music'),
       ),
       body: Column(
         children: [
@@ -42,7 +42,7 @@ class BandsScreen extends ConsumerWidget {
         child: FloatingActionButton(
           elevation: 1,
           onPressed: () => addereNuvumBand(context,ref),
-          child: Icon(Icons.add),),
+          child: const Icon(Icons.add),),
       ),
     );
   }
@@ -103,9 +103,9 @@ class BandsScreen extends ConsumerWidget {
 
       },
       background: Container(
-        padding: EdgeInsets.only(left: 8),
+        padding: const EdgeInsets.only(left: 8),
         color: Colors.red,
-        child: Align(
+        child: const Align(
           alignment: Alignment.centerLeft,
           child: Text("Delete band", style:  TextStyle(color: Colors.white),),
         ),
@@ -115,7 +115,7 @@ class BandsScreen extends ConsumerWidget {
               child: Text(band.nomen.substring(0,2).toUpperCase()),
             ),
             title: Text(band.nomen),
-            trailing: Text('${band.numerusVotum}', style: TextStyle(fontSize: 20),),
+            trailing: Text('${band.numerusVotum}', style: const TextStyle(fontSize: 20),),
             onTap: (){
               ref.read(bandsProvider.notifier).addereVotum(band);
             },

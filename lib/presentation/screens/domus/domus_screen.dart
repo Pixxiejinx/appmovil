@@ -15,7 +15,7 @@ class DomusScreen extends ConsumerWidget {
    
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flu Avm App'),
+        title: const Text('Flu Avm App'),
         actions: [
           IconButton(
             onPressed: (){
@@ -29,7 +29,7 @@ class DomusScreen extends ConsumerWidget {
       )
         ],
       ),
-      body: _DomusView(),
+      body: const _DomusView(),
     );
   }
 }
