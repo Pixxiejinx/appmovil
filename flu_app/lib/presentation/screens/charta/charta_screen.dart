@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flu_app/presentation/widgets/widget.dart';
 import 'package:flutter/material.dart';
 
 class ChartaScreen extends StatefulWidget {
@@ -12,10 +15,29 @@ class _ChartaScreenState extends State<ChartaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mapas'),
+        title: Text('Mapas'),
       ),
-      body: const Center(
-        child: Text('Charta Screen'),
+      body: Stack(
+        fit: StackFit.expand,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          ColoredBox(
+            color: Colors.blueGrey,
+            child: Center(
+              child: Text(
+                'Mapa a pantalla completa',
+                style: TextStyle(fontSize: 24, color: Colors.white),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topRight,
+              child: Padding(
+                padding: EdgeInsets.all(120),
+                child: ComplereForm()
+              ),
+            ),
+        ],
       ),
     );
   }

@@ -30,6 +30,11 @@ const appMenuItems = <MenuItem>[
   subtitulus: 'Gráficos de Pie Chart y votaciones', 
   link: '/bands', 
   icon: Icons.music_note_outlined),
-
+MenuItem(
+  titulus: 'Mapas', 
+  subtitulus: 'Localizador de usuarios', 
+  link: '/charta', 
+  icon: Icons.map)
 
 ];
+
