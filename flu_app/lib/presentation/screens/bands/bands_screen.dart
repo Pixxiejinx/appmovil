@@ -1,10 +1,12 @@
-import 'package:flu_avm/config/config.dart';
-import 'package:flu_avm/presentation/providers/providers.dart';
+import '../../../config/entities/band.dart';
+import '../../../presentation/providers/providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pie_chart/pie_chart.dart';
+import '../../../config/config.dart';
+import '../../../presentation/providers/bands_provider.dart';
 
 class BandsScreen extends ConsumerWidget {
   const BandsScreen({super.key});
@@ -15,7 +17,7 @@ class BandsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
 
     final bandsState = ref.watch(bandsProvider);
-    final bands = bandsState.bands;
+      final bands = bandsState.bands;
 
     return Scaffold(
       appBar: AppBar(
@@ -100,7 +102,7 @@ class BandsScreen extends ConsumerWidget {
       direction: DismissDirection.startToEnd,
       onDismissed: (direction) {
 
-        ref.read(bandsProvider.notifier).delereBand(band);
+        ref.read(bandsProvider.notifier).delereBand(band.id);
 
       },
       background: Container(
@@ -118,7 +120,7 @@ class BandsScreen extends ConsumerWidget {
             title: Text(band.nomen),
             trailing: Text('${band.numerusVotum}', style: const TextStyle(fontSize: 20),),
             onTap: (){
-              ref.read(bandsProvider.notifier).addereVotum(band);
+              ref.read(bandsProvider.notifier).addereVotum(band.id);
             },
           ),
     );
@@ -163,7 +165,7 @@ class BandsScreen extends ConsumerWidget {
         isDefaultAction: true,
         child: const Text('Add'),
         onPressed: () {
-          addereBandAdCollectione(context,ref, textumController.text);
+          ref.read(bandsProvider.notifier).addereBand(textumController.text);
           context.pop();
         },
       ),
@@ -177,15 +179,6 @@ class BandsScreen extends ConsumerWidget {
 );
   }
 
-  void addereBandAdCollectione(BuildContext context,WidgetRef ref ,String nomen){
-    if(nomen.length > 1){
-      ref.read(bandsProvider.notifier).addereBand(Band(
-        id: DateTime.now().toString(),
-        nomen: nomen,
-        numerusVotum: 0
-      ));
-    }
-  }
 
 }
 

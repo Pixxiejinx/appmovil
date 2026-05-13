@@ -11,6 +11,7 @@ class Band {
   required this.numerusVotum
 });
 
+
  Band copyWith([String? id, String? nomen, int? numerusVotum]){
   return Band(
     id: id ?? this.id,
@@ -18,12 +19,12 @@ class Band {
     numerusVotum: numerusVotum ?? this.numerusVotum
     );
 }
-}
 
 factory Band.fromMap(Map<String, dynamic> map){
   return Band(
-    id: obj['id'],
-    nomen: obj['nomen'],
-    numerusVotum: obj['numerusVotum']
+    id: map['id'],
+    nomen: map['nomen'],
+    numerusVotum: map['numerusVotum']
   );
+}
 }
