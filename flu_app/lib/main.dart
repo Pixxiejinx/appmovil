@@ -1,10 +1,14 @@
 import 'package:flu_app/config/config.dart';
 import 'package:flu_app/presentation/providers/providers.dart';
-
+import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
+Future<void> main() async {
+ WidgetsFlutterBinding.ensureInitialized();
+ MapboxOptions.setAccessToken(
+  "pk.eyJ1IjoicGl4eGllamlueCIsImEiOiJjbXA1bGEydGEwaTk1MnJzOTcwenFsZ2hvIn0.Wt0r33AMvWaIUGncNP8Wyw"
+ );
   runApp(
     const ProviderScope(
       child: MainApp()
