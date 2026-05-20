@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/legacy.dart';
-import '../../../config/config.dart'; // Aquí asumo que está tu modelo Band
+import '../../../config/config.dart';
+// ignore: library_prefixes
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 enum ServerStatus { Online, Offline, Connecting }
