@@ -1,16 +1,17 @@
-import 'package:flu_app/presentation/widgets/complere_form.dart';
 import 'package:flu_app/presentation/widgets/widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
+import '../../providers/providers.dart';
 
-class ChartaScreen extends StatefulWidget {
+class ChartaScreen extends ConsumerStatefulWidget{
   const ChartaScreen({super.key});
 
   @override
-  State<ChartaScreen> createState() => _ChartaScreenState();
+  ConsumerState<ChartaScreen> createState() => _ChartaScreenState();
 }
 
-class _ChartaScreenState extends State<ChartaScreen> {
+class _ChartaScreenState extends ConsumerState<ChartaScreen> {
 
   CircleAnnotationManager? _circleAnnotationManager;
   
@@ -29,11 +30,40 @@ class _ChartaScreenState extends State<ChartaScreen> {
 
     if(manager == null) return;
 
+    final placed = ref.read(markerPositumProvider);
+
+    if(!placed){
+      await manager.deleteAll();
+      return;
+    }
+
     final situs = Position(-122.467895, 37.800126);
+    final color = ref.read(formColorProvider);
+
+    final optiones = CircleAnnotationOptions(
+        geometry: Point(coordinates: situs),
+        circleColor: color.toARGB32(),
+        circleRadius: 14,
+        circleStrokeColor: Colors.white.toARGB32(),
+        circleStrokeWidth: 2,
+        isDraggable: true,
+      );
+
+      try {
+        await manager.create(optiones);
+      } catch (e) {
+        debugPrint('Error al crear el marcador: $e');
+      }
   }
 
   @override
   Widget build(BuildContext context) {
+
+    ref.listen(markerPositumProvider, (prev, next) {
+      if(next) _addVelRenovareMarker();
+    });
+
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Maps'),
