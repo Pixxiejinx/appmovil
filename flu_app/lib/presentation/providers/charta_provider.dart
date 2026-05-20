@@ -13,6 +13,6 @@ final coordsMarkerProvider = StateProvider<Position>((ref) => initialisMarkerPos
 final socketServiceProvider = Provider<ChartaService>((ref) {
 final service = ChartaService();
  
-  ref.onDispose(service.conectare);
+  ref.onDispose(service.finire);
   return service; 
 });
