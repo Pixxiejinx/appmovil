@@ -332,10 +332,10 @@ packages:
     dependency: "direct main"
     description:
       name: mapbox_maps_flutter
-      sha256: c2043d610ae976831b958f9ca22627a729f22598f5b339e3c94eb8d883f918ce
+      sha256: "74eee8ec50a5bdca33e7dec67a05f39be1e4598cf5555ca909c169ca54510427"
       url: "https://pub.dev"
     source: hosted
-    version: "2.23.1"
+    version: "2.20.0"
   matcher:
     dependency: transitive
     description:
@@ -641,10 +641,10 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: "0016aef94fc66495ac78af5859181e3f3bf2026bd8eecc72b9565601e19ab360"
+      sha256: "046d3928e16fa4dc46e8350415661755ab759d9fc97fc21b5ab295f71e4f0499"
       url: "https://pub.dev"
     source: hosted
-    version: "15.2.0"
+    version: "15.1.0"
   watcher:
     dependency: transitive
     description:
