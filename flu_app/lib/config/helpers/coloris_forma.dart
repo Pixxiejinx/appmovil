@@ -6,5 +6,11 @@ String exColorAdHex(Color color ) {
   return '#${hex.substring(2).toUpperCase()}';
 }
 
-
-
+Color adHexExColor(String hexString) {
+  final hex = hexString.replaceFirst('#', '').trim();
+  if (hex.length == 6) {
+    final value = 0xFF000000 | int.parse(hex, radix: 16);
+    return Color(value);
+  }
+  return Colors.transparent;
+}
