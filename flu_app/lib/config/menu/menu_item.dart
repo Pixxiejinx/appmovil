@@ -40,6 +40,7 @@ MenuItem(
   titulus: 'PokeApi', 
   subtitulus: 'Peticiones http a una Api', 
   link: '/request', 
+  icon: Icons.catching_pokemon)
   
 
 ];
