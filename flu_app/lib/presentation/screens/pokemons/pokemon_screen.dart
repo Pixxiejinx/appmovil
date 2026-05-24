@@ -9,7 +9,7 @@ class PokemonScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
      appBar: AppBar(
-    title: Text('Nombre del Pokemon')
+     title: Text('Nombre del Pokemon')
      ),
      body: Text('Datos del Pokemon: $pokemon_id', style: GoogleFonts.russoOne(fontSize: 22),),
     );
