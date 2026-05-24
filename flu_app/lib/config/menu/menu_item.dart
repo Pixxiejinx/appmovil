@@ -34,7 +34,13 @@ MenuItem(
   titulus: 'Mapas', 
   subtitulus: 'Localizador de usuarios', 
   link: '/charta', 
-  icon: Icons.map)
+  icon: Icons.map),
+
+MenuItem(
+  titulus: 'PokeApi', 
+  subtitulus: 'Peticiones http a una Api', 
+  link: '/request', 
+  
 
 ];
 
