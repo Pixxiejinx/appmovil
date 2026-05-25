@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'dart:math' as math;
 import 'package:flu_app/config/config.dart';
 import 'package:flu_app/presentation/providers/modus_provider.dart';
@@ -29,7 +31,16 @@ class DomusScreen extends ConsumerWidget {
       )
         ],
       ),
-      body: const _DomusView(),
+      body: Column(
+        children: [
+          Image.asset('assets/images/miku.png',
+          width: double.infinity,
+          fit: BoxFit.contain,),
+          Expanded(
+            child: _DomusView()
+            ),
+        ],
+      ),
     );
   }
 }

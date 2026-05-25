@@ -36,3 +36,4 @@ flutter:
   # No olvides añadir la sección de assets si vas a usar el icono:
   assets:
     - assets/icon/icon.png
+    - assets/images/
