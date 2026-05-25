@@ -1,4 +1,3 @@
-import 'package:flu_app/presentation/screens/bienvenida/bienvenida_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flu_app/presentation/screens/screens.dart';
 

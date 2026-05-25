@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
-
 import 'package:flu_app/config/config.dart';
 import 'package:flu_app/config/secret.example.dart';
 import 'package:flu_app/presentation/providers/providers.dart';
-// Importamos el archivo de tu bienvenida por si acaso estuviera ahí el truco
-import 'package:flu_app/presentation/providers/bienvenida_provider.dart'; 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
