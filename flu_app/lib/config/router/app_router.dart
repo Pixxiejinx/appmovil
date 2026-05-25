@@ -1,12 +1,16 @@
-import 'package:flutter/material.dart';
+import 'package:flu_app/presentation/screens/bienvenida/bienvenida_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flu_app/presentation/screens/screens.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
-    GoRoute(
+     GoRoute(
       path: '/',
+      builder: (context, state) => const BienvenidaScreen(),
+      ),
+    GoRoute(
+      path: '/home',
       builder: (context, state) => const DomusScreen(),
       ),
       GoRoute(

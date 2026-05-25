@@ -36,4 +36,9 @@ flutter:
   # No olvides añadir la sección de assets si vas a usar el icono:
   assets:
     - assets/icon/icon.png
-    - assets/images/
+    - assets/images/miku.png
+    - assets/images/movil.png
+    - assets/images/puntos.png
+    - assets/images/servidor.png
+    - assets/images/mapa.jpg
+    - assets/images/votaciones.jpg

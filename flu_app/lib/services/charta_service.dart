@@ -27,7 +27,7 @@ class ChartaService {
   }
 
   void conectare() {
-    _socket = IO.io('http://192.168.1.23:3200' //!REVISAR IP Y PUERTO
+    _socket = IO.io('http://192.168.1.14:3200' //!REVISAR IP Y PUERTO
       , IO.OptionBuilder()
         .setTransports(['websocket'])
         .enableAutoConnect()
