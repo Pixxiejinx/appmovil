@@ -2,9 +2,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-// 1. IMPORTANTE: Cambia o añade el import para traer tus providers globales de clase.
-// Si 'estTenebrisModusProvider' está dentro de presentation/providers/providers.dart, usa este import:
 import 'package:flu_app/presentation/providers/providers.dart';
 
 class BienvenidaScreen extends ConsumerWidget {
@@ -12,7 +9,6 @@ class BienvenidaScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // 2. CORREGIDO: Ahora escuchamos al provider global de toda la app
     final bool estTenebrisModus = ref.watch(estTenebrisModusProvider);
     final theme = Theme.of(context);
 
@@ -45,12 +41,11 @@ class BienvenidaScreen extends ConsumerWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                        // 3. CORREGIDO: Al pulsar, actualizamos el estado del provider global
-                        ref.read(estTenebrisModusProvider.notifier).update((state) => !state);
+                      ref.read(estTenebrisModusProvider.notifier).update((state) => !state);
                     },
                     icon: Icon(
-                        estTenebrisModus ? Icons.dark_mode_outlined : Icons.light_mode_outlined,
-                        size: 24,
+                      estTenebrisModus ? Icons.dark_mode_outlined : Icons.light_mode_outlined,
+                      size: 24,
                     ),
                   ),
                 ],
@@ -94,7 +89,6 @@ class BienvenidaScreen extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      // ignore: deprecated_member_use
                       color: Colors.green.withOpacity(0.1),
                       border: Border.all(color: Colors.green),
                       borderRadius: BorderRadius.circular(12),

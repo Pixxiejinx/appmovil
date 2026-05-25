@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:flu_app/config/config.dart';
-import 'package:flu_app/config/secret.example.dart';
 import 'package:flu_app/presentation/providers/providers.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
