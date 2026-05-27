@@ -13,6 +13,7 @@ class BienvenidaScreen extends ConsumerWidget {
     final theme = Theme.of(context);
 
     return Scaffold(
+      backgroundColor: theme.colorScheme.surface, // <--- Aquí toma el color de fondo de tu Theme Data
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
@@ -137,7 +138,7 @@ class BienvenidaScreen extends ConsumerWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(child: _InfoStatWidget(title: '5', subtitle: 'PANTALLAS')),
+                  Expanded(child: _InfoStatWidget(title: '6', subtitle: 'PANTALLAS')),
                   const SizedBox(width: 8),
                   Expanded(child: _InfoStatWidget(title: '2', subtitle: 'WEBSOCKETS')),
                   const SizedBox(width: 8),
@@ -149,7 +150,7 @@ class BienvenidaScreen extends ConsumerWidget {
 
               FilledButton(
                 onPressed: () {
-                  context.go('/home');
+                  context.push('/home');
                 },
                 style: FilledButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 14),

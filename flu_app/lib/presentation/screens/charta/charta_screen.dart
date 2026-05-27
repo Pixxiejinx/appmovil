@@ -131,7 +131,7 @@ Future<void> _addeVelRenovareMarker() async {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mapas'),
+        title: Text('Mapa de entrenadores'),
       ),
       body: Stack(
         fit: StackFit.expand,

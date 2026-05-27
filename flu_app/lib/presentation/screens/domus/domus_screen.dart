@@ -88,10 +88,7 @@ class _PropriumListTile extends StatelessWidget {
         math.Random().nextInt(255), 
 
         ),
-      child: Icon(
-        menuItem.icon,
-        color: Colors.pinkAccent,
-      ),
+      child: menuItem.icon,
      ),
      onTap: () {
       context.push(menuItem.link);

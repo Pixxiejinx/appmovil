@@ -5,3 +5,4 @@ export './charta_provider.dart';
 export 'pokemon_index_provider.dart';
 export './pokemon_provider.dart';
 export './bienvenida_provider.dart';
+export './todo_provider.dart';

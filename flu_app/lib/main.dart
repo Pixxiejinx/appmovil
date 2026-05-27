@@ -27,7 +27,7 @@ class MainApp extends ConsumerWidget {
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       theme: AppTheme(
-        electusColor: Colors.deepOrangeAccent.shade100,
+        electusColor: Colors.pink.shade200,
         tenebrisModusEst: tenebrisModus,
       ).getTheme(),
     );
