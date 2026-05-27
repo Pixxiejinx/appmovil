@@ -2,6 +2,7 @@ import 'package:flu_app/presentation/providers/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PokemonsScreen extends StatelessWidget {
   const PokemonsScreen({super.key});
@@ -9,8 +10,8 @@ class PokemonsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: Color(0xFFFCE4EC),
       body: PokemonsVisum(),
-
     );
   }
 }
@@ -25,12 +26,10 @@ class PokemonsVisum extends ConsumerStatefulWidget {
 class  _PokemonsVisumState extends ConsumerState <PokemonsVisum> {
 
   bool oneratusEst = false;
-
   final scrollController = ScrollController(); 
- @override
 
-   void initState() {
-
+  @override
+  void initState() {
     scrollController.addListener(() {
       if (scrollController.position.pixels + 200 > scrollController.position.maxScrollExtent) {
         vadeProximaPagina();
@@ -40,22 +39,28 @@ class  _PokemonsVisumState extends ConsumerState <PokemonsVisum> {
   }
 
   @override
-
   void dispose(){
     scrollController.dispose();
     super.dispose();
   }
   
   @override
-
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: scrollController,
       slivers: [
         SliverAppBar(
-          title: Text('Pokemon'),
-         floating: true,
-         backgroundColor: Theme.of(context).secondaryHeaderColor.withValues(alpha: 0.5),
+          title: Text(
+            'POKÉDEX'.toUpperCase(),
+            style: GoogleFonts.russoOne(
+              fontSize: 22,
+              letterSpacing: 1.2,
+            ),
+          ),
+          floating: true,
+          backgroundColor: Colors.pink.shade400, 
+          foregroundColor: Colors.white,
+          elevation: 4,
         ),
         _PokemonGrid(),
       ],
@@ -63,10 +68,8 @@ class  _PokemonsVisumState extends ConsumerState <PokemonsVisum> {
   }
 
   Future vadeProximaPagina() async {
-
     if (oneratusEst) return;
-
-     oneratusEst = true;
+    oneratusEst = true;
 
     await Future.delayed(const Duration(seconds: 2));
 
@@ -74,22 +77,23 @@ class  _PokemonsVisumState extends ConsumerState <PokemonsVisum> {
       ...state, 
       ...List.generate(
         30, 
-        (index) => state.length + index + 1)]
-        );
-      oneratusEst = false;
-      movereScrollAdDescendit();
+        (index) => state.length + index + 1
+      )]
+    );
+    oneratusEst = false;
+    movereScrollAdDescendit();
   }
+
   void movereScrollAdDescendit(){
     if (scrollController.position.pixels + 100 <= scrollController.position.maxScrollExtent) return;
     
-      scrollController.animateTo(
-        scrollController.position.pixels + 200,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.fastOutSlowIn,
-      );
-    }
+    scrollController.animateTo(
+      scrollController.position.pixels + 200,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.fastOutSlowIn,
+    );
+  }
 }
-
 
 class _PokemonGrid extends ConsumerWidget {
   const _PokemonGrid();
@@ -109,9 +113,16 @@ class _PokemonGrid extends ConsumerWidget {
           onTap: () {
             context.push('/request/${index + 1}');
           },
-          child: Image.network(
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png',
-            fit: BoxFit.contain,
+          child: Container(
+            margin: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.6), 
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Image.network(
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png',
+              fit: BoxFit.contain,
+            ),
           ),
         );
       },
