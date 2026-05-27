@@ -1,9 +1,9 @@
-class Pokemon{
+class Pokemon {
   final int id;
   final String nomen;
   final int altitudo;
   final int pondus;
-  final List<String> facultates;
+  final List<String> facultates; 
   final String? faciemImaginem;
 
   Pokemon({
@@ -12,6 +12,6 @@ class Pokemon{
     required this.altitudo,
     required this.pondus,
     required this.facultates,
-   this.faciemImaginem,
+    this.faciemImaginem,
   });
 }

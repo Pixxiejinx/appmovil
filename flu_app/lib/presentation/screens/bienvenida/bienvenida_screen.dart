@@ -13,7 +13,7 @@ class BienvenidaScreen extends ConsumerWidget {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.surface, // <--- Aquí toma el color de fondo de tu Theme Data
+      backgroundColor: theme.colorScheme.surface, 
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),

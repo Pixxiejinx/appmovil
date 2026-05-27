@@ -27,7 +27,7 @@ final appMenuItems = <MenuItem>[
     titulus: 'Contador Pokemon',
     subtitulus: 'PokeHouse',
     link: '/numerator-river',
-    icon: Icon(Icons.add),
+    icon: Icon(Icons.analytics_outlined),
   ),
 
   const MenuItem(
@@ -56,7 +56,7 @@ final appMenuItems = <MenuItem>[
   subtitulus: 'Mi lista de tareas personal',
   link: '/todo-cute',
   icon: Padding(
-    padding: const EdgeInsets.all(4.0), // Espacio para que no choque con los bordes
+    padding: const EdgeInsets.all(4.0), 
     child: Image.asset(
       'assets/images/vecteezy_medical-clipboard-checklist-pixel-art-icon-for-patient-form_74234734.png',
       fit: BoxFit.contain,

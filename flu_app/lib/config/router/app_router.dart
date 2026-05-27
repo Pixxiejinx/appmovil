@@ -39,8 +39,8 @@ final appRouter = GoRouter(
       ],
     ),
     GoRoute(
-  path: '/todo-cute', // El link de tu MenuItem
-  builder: (context, state) => const TodoListScreen(), // <-- El nombre de la clase corregido
+  path: '/todo-cute', 
+  builder: (context, state) => const TodoListScreen(), 
       ),
     ]
   );
