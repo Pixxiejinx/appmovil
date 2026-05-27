@@ -54,7 +54,8 @@ class _TodoListScreenState extends ConsumerState<TodoListScreen> {
     final tareas = ref.watch(todoListProvider);
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFCE4EC), // Un rosa más suave y sólido
+      resizeToAvoidBottomInset: false,
+      backgroundColor: const Color(0xFFFCE4EC),
       appBar: AppBar(
         title: const Text('TO DO LIST CUTE', style: TextStyle(fontWeight: FontWeight.bold)),
         backgroundColor: Colors.transparent,
@@ -63,10 +64,8 @@ class _TodoListScreenState extends ConsumerState<TodoListScreen> {
       ),
       body: Column(
         children: [
-          // 1. LISTA DE TAREAS - Ajustada para que no se vea tan estirada
           Expanded(
             child: ListView.builder(
-              // Añadimos padding horizontal grande para centrar visualmente el contenido
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
               itemCount: tareas.length,
               itemBuilder: (context, index) {
@@ -94,9 +93,8 @@ class _TodoListScreenState extends ConsumerState<TodoListScreen> {
                         color: tarea.isCompleted ? Colors.grey : Colors.pink.shade900,
                       ),
                     ),
-                    // Agrupamos los botones para que no bailen tanto a la derecha
                     trailing: Wrap(
-                      spacing: -8, // Acerca los botones entre sí
+                      spacing: -7,
                       children: [
                         IconButton(
                           icon: Icon(tarea.isCompleted ? Icons.check_circle : Icons.radio_button_unchecked,
@@ -115,7 +113,6 @@ class _TodoListScreenState extends ConsumerState<TodoListScreen> {
             ),
           ),
 
-          // 2. MÁQUINA DE ESCRIBIR - ¡Ahora más grande y centrada!
           GestureDetector(
             onTap: _mostrarDialogoNuevaTarea,
             child: Container(
@@ -124,14 +121,12 @@ class _TodoListScreenState extends ConsumerState<TodoListScreen> {
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  // Máquina de escribir mucho más grande (width: 320)
                   Image.asset(
                     'assets/images/—Pngtree—pink retro typewriter_4544051.png',
-                    width: 320, // Aumentado de 240 a 320
+                    width: 320,
                     fit: BoxFit.contain,
                   ),
                   
-                  // Cartelito flotante estilizado
                   Positioned(
                     bottom: 0,
                     child: Container(
